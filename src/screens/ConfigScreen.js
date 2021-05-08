@@ -18,7 +18,7 @@ export default ConfigScreen = ()=>{
         getData();
     },[])
 
-    const getData = () => {
+    const getData = () => { //Obtiene datos de sensores y estados de switches
 
         init({
             size: 10000,
@@ -76,7 +76,7 @@ export default ConfigScreen = ()=>{
         client.onConnectionLost = onConnectionLost;
     }
 
-    function slideIsCompleted (value){
+    function slideIsCompleted (value){ //Envia el valor cuando finaliza el evento slide
         let uname = Math.random().toString(36).substring(7);
         const client = new Paho.MQTT.Client('test.mosquitto.org', 8080, uname);
         client.connect({ onSuccess:onConnect, useSSL: false });
@@ -93,7 +93,7 @@ export default ConfigScreen = ()=>{
         }
     }    
 
-    const toggleLight = () =>{
+    const toggleLight = () =>{ //On-Off luz
         let uname = Math.random().toString(36).substring(7);
         const client = new Paho.MQTT.Client('test.mosquitto.org', 8080, uname);
         client.connect({ onSuccess:onConnect, useSSL: false });
@@ -107,7 +107,7 @@ export default ConfigScreen = ()=>{
         }
     }
 
-    const toggleIrrigation = () =>{
+    const toggleIrrigation = () =>{ //On-Off irrigación
         let uname = Math.random().toString(36).substring(7);
         const client = new Paho.MQTT.Client('test.mosquitto.org', 8080, uname);
         client.connect({ onSuccess:onConnect, useSSL: false });
@@ -121,7 +121,7 @@ export default ConfigScreen = ()=>{
         }
     }
 
-    const toggleManualMode = () => {
+    const toggleManualMode = () => {    //Activa modo manual. Todos los switches se apagan al entrar en este modo
         let uname = Math.random().toString(36).substring(7);
         const client = new Paho.MQTT.Client('test.mosquitto.org', 8080, uname);
         client.connect({ onSuccess:onConnect, useSSL: false });

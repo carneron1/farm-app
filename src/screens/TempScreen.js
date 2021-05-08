@@ -21,7 +21,7 @@ export default TempScreen = ()=>{
         getData();
     },[])
 
-    const getData = () => {
+    const getData = () => {  //Obtiene datos de sensores
 
         init({
             size: 10000,
